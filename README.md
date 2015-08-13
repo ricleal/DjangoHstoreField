@@ -1,6 +1,12 @@
 # DjangoHstoreField
 Django test with a Model with HStoreField and the respective ModelForm.
 
+HStore fiels supports not nested strings json . Sort of is OK:
+```
+{"att2": "{'a':'2','b':'3'}", "att1": "2"}
+```
+(Note the double quotes!!!)
+
 # To start the project
 
 ```
@@ -93,4 +99,8 @@ Open the browser: [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 # Tested:
 with:
-- Django 1.8
+- Django 1.8.3
+
+
+# Reference:
+http://matthewdaly.co.uk/blog/2015/08/01/exploring-the-hstorefield-in-django-1-dot-8/

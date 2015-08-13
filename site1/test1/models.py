@@ -9,4 +9,4 @@ class Scan(models.Model):
     description = models.TextField()
     attributes = HStoreField()
     def __str__(self):
-        return self.name
+        return self.name + '-->' + str( self.attributes )
