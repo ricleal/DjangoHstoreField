@@ -70,11 +70,26 @@ python manage.py migrate
 ```
 
 
+# create super user:
+```
+python manage.py createsuperuser
+```
+pass: admin/admin
+
+add models to admin.py
+
+# Open admin
+
+python manage.py runserver
+
+http://127.0.0.1:8000/admin
+
 # Run:
 ```
 python manage.py runserver
 ```
 Open the browser: [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
 
 # Tested:
 with:
