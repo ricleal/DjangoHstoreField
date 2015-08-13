@@ -11,9 +11,43 @@ python manage.py startapp plot1
 # Then
 
 Edit DB stuff...
+
+then:
 ```
 python manage.py migrate
+python manage.py makemigrations --empty store
 ```
+
+Using ```pgcli```, something like this should show up:
+
+```
+$ pgcli mydb user1
+Password:
+Version: 0.19.1
+Chat: https://gitter.im/dbcli/pgcli
+Mail: https://groups.google.com/forum/#!forum/pgcli
+Home: http://pgcli.com
+mydb> \dt
++----------+----------------------------+--------+---------+
+| Schema   | Name                       | Type   | Owner   |
+|----------+----------------------------+--------+---------|
+| public   | auth_group                 | table  | user1   |
+| public   | auth_group_permissions     | table  | user1   |
+| public   | auth_permission            | table  | user1   |
+| public   | auth_user                  | table  | user1   |
+| public   | auth_user_groups           | table  | user1   |
+| public   | auth_user_user_permissions | table  | user1   |
+| public   | django_admin_log           | table  | user1   |
+| public   | django_content_type        | table  | user1   |
+| public   | django_migrations          | table  | user1   |
+| public   | django_session             | table  | user1   |
++----------+----------------------------+--------+---------+
+SELECT 10
+Command Time: 0.000s
+Format Time: 0.004s
+mydb>
+```
+
 
 # Run:
 ```
