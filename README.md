@@ -15,7 +15,7 @@ Edit DB stuff...
 then:
 ```
 python manage.py migrate
-python manage.py makemigrations --empty store
+python manage.py makemigrations
 ```
 
 Using ```pgcli```, something like this should show up:
@@ -46,6 +46,27 @@ SELECT 10
 Command Time: 0.000s
 Format Time: 0.004s
 mydb>
+```
+
+# Then
+
+```
+python manage.py makemigrations --empty test1
+```
+
+edit
+site1/migrations/0001_initial.py
+
+Then:
+```
+python manage.py migrate
+```
+
+# Add a model with HStore field, then:
+
+```
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 
