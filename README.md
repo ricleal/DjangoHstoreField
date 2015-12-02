@@ -98,9 +98,11 @@ Open the browser: [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 
 # Valid urls:
+```
 http://localhost:8000/test1/detail/11/
 http://localhost:8000/test1/list
 http://localhost:8000/test1/create
+```
 
 
 # Tested:
