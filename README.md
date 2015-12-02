@@ -110,3 +110,38 @@ with:
 
 # Reference:
 http://matthewdaly.co.uk/blog/2015/08/01/exploring-the-hstorefield-in-django-1-dot-8/
+
+
+# NEW
+
+2015/12/02 - Django 1.9 supports JSONField
+
+```
+from django.contrib.postgres.fields import JSONField
+from django.db import models
+
+class Dog(models.Model):
+    name = models.CharField(max_length=200)
+    data = JSONField()
+
+    def __str__(self):  # __unicode__ on Python 2
+        return self.name
+```
+
+```
+>>> Dog.objects.create(name='Rufus', data={
+...     'breed': 'labrador',
+...     'owner': {
+...         'name': 'Bob',
+...         'other_pets': [{
+...             'name': 'Fishy',
+...         }],
+...     },
+... })
+>>> Dog.objects.create(name='Meg', data={'breed': 'collie'})
+
+>>> Dog.objects.filter(data__breed='collie')
+[<Dog: Meg>]
+```
+
+## TODO: Try this in the code!!
